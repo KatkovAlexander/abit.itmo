@@ -22,4 +22,8 @@ class GlobalRouter {
                 
         window?.setRoot(navigation)
     }
+    
+    func setMain() {
+        window?.setRoot(TabBarController(nibName: nil, bundle: nil))
+    }
 }
