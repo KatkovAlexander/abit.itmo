@@ -12,6 +12,14 @@
 		113BBCEC2AB03BA500654BF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBCEB2AB03BA500654BF8 /* SceneDelegate.swift */; };
 		113BBCF32AB03BAA00654BF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 113BBCF22AB03BAA00654BF8 /* Assets.xcassets */; };
 		113BBCF62AB03BAA00654BF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 113BBCF42AB03BAA00654BF8 /* LaunchScreen.storyboard */; };
+		113BBD442AB0536A00654BF8 /* AppInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD432AB0536A00654BF8 /* AppInitializer.swift */; };
+		113BBD462AB0537F00654BF8 /* GlobalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD452AB0537F00654BF8 /* GlobalRouter.swift */; };
+		113BBD492AB053BD00654BF8 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD482AB053BD00654BF8 /* NavigationController.swift */; };
+		113BBD4C2AB053E800654BF8 /* CALayer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD4B2AB053E800654BF8 /* CALayer+extension.swift */; };
+		113BBD4E2AB0543F00654BF8 /* UIWindow+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD4D2AB0543F00654BF8 /* UIWindow+extensions.swift */; };
+		113BBD552AB0552300654BF8 /* AuthFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD542AB0552300654BF8 /* AuthFactory.swift */; };
+		113BBD572AB0555900654BF8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD562AB0555900654BF8 /* AuthViewController.swift */; };
+		113BBD592AB0567100654BF8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD582AB0567100654BF8 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +29,14 @@
 		113BBCF22AB03BAA00654BF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		113BBCF52AB03BAA00654BF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		113BBCF72AB03BAA00654BF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		113BBD432AB0536A00654BF8 /* AppInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInitializer.swift; sourceTree = "<group>"; };
+		113BBD452AB0537F00654BF8 /* GlobalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalRouter.swift; sourceTree = "<group>"; };
+		113BBD482AB053BD00654BF8 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		113BBD4B2AB053E800654BF8 /* CALayer+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+extension.swift"; sourceTree = "<group>"; };
+		113BBD4D2AB0543F00654BF8 /* UIWindow+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+extensions.swift"; sourceTree = "<group>"; };
+		113BBD542AB0552300654BF8 /* AuthFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFactory.swift; sourceTree = "<group>"; };
+		113BBD562AB0555900654BF8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		113BBD582AB0567100654BF8 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		1FBDB5721120CB6C6F01310F /* Pods_abit_itmo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_abit_itmo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B72D91019E1A5BE32AC4C0 /* Pods-abit.itmo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abit.itmo.debug.xcconfig"; path = "Target Support Files/Pods-abit.itmo/Pods-abit.itmo.debug.xcconfig"; sourceTree = "<group>"; };
 		F5B3B30E5726784B827FFDD2 /* Pods-abit.itmo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abit.itmo.release.xcconfig"; path = "Target Support Files/Pods-abit.itmo/Pods-abit.itmo.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +113,8 @@
 		113BBCFF2AB03EC700654BF8 /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				113BBD432AB0536A00654BF8 /* AppInitializer.swift */,
+				113BBD452AB0537F00654BF8 /* GlobalRouter.swift */,
 			);
 			path = ServiceLayer;
 			sourceTree = "<group>";
@@ -104,8 +122,70 @@
 		113BBD052AB0402300654BF8 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				113BBD4F2AB0545800654BF8 /* Auth */,
+				113BBD4A2AB053D300654BF8 /* Extension */,
+				113BBD472AB053A200654BF8 /* NavigationController */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		113BBD472AB053A200654BF8 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				113BBD482AB053BD00654BF8 /* NavigationController.swift */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		113BBD4A2AB053D300654BF8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				113BBD4B2AB053E800654BF8 /* CALayer+extension.swift */,
+				113BBD4D2AB0543F00654BF8 /* UIWindow+extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		113BBD4F2AB0545800654BF8 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				113BBD532AB054B200654BF8 /* Factory */,
+				113BBD522AB0547400654BF8 /* Model */,
+				113BBD512AB0546600654BF8 /* View */,
+				113BBD502AB0545E00654BF8 /* ViewModel */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		113BBD502AB0545E00654BF8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				113BBD582AB0567100654BF8 /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		113BBD512AB0546600654BF8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				113BBD562AB0555900654BF8 /* AuthViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		113BBD522AB0547400654BF8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		113BBD532AB054B200654BF8 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				113BBD542AB0552300654BF8 /* AuthFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		608AA0B7FD648475D9893630 /* Pods */ = {
@@ -231,8 +311,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113BBD592AB0567100654BF8 /* AuthViewModel.swift in Sources */,
 				113BBCEA2AB03BA500654BF8 /* AppDelegate.swift in Sources */,
+				113BBD442AB0536A00654BF8 /* AppInitializer.swift in Sources */,
+				113BBD492AB053BD00654BF8 /* NavigationController.swift in Sources */,
 				113BBCEC2AB03BA500654BF8 /* SceneDelegate.swift in Sources */,
+				113BBD4E2AB0543F00654BF8 /* UIWindow+extensions.swift in Sources */,
+				113BBD462AB0537F00654BF8 /* GlobalRouter.swift in Sources */,
+				113BBD552AB0552300654BF8 /* AuthFactory.swift in Sources */,
+				113BBD572AB0555900654BF8 /* AuthViewController.swift in Sources */,
+				113BBD4C2AB053E800654BF8 /* CALayer+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
