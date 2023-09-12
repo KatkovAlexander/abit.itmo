@@ -9,7 +9,7 @@ import UIKit
 
 enum TabBarItemType: Int, CaseIterable {
     
-    case menu
+    case dashboard
     case list
     case profile
 }
@@ -24,12 +24,12 @@ struct TabBarModule {
     
     func configure() -> UIViewController {
         switch type {
-        case .menu:
-            return AuthFactory().build()
+        case .dashboard:
+            return DashboardFactory().build()
         case .list:
-            return AuthFactory().build()
+            return ListFactory().build()
         case .profile:
-            return AuthFactory().build()
+            return ProfileFactory().build()
         }
     }
 }
@@ -44,7 +44,7 @@ struct TabBarPresentation {
     
     var title: String {
         switch type {
-        case .menu:
+        case .dashboard:
             return "Дашборд"
         case .list:
             return "Списки"
@@ -55,7 +55,7 @@ struct TabBarPresentation {
     
     var image: UIImage? {
         switch type {
-        case .menu:
+        case .dashboard:
             return UIImage(systemName: "menucard")
         case .list:
             return UIImage(systemName: "message")
@@ -66,7 +66,7 @@ struct TabBarPresentation {
     
     var selectedImage: UIImage? {
         switch type {
-        case .menu:
+        case .dashboard:
             return UIImage(systemName: "menucard.fill")
         case .list:
             return UIImage(systemName: "message.fill")
