@@ -31,6 +31,12 @@
 		113BBD7E2AB0C24D00654BF8 /* ProfileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD782AB0C24D00654BF8 /* ProfileFactory.swift */; };
 		113BBD7F2AB0C24D00654BF8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD7A2AB0C24D00654BF8 /* ProfileViewController.swift */; };
 		113BBD802AB0C24D00654BF8 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD7D2AB0C24D00654BF8 /* ProfileViewModel.swift */; };
+		116B773B2AB2BCC0004A833D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B773A2AB2BCC0004A833D /* Colors.swift */; };
+		11CFABEA2AB58C15009E1716 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CFABE92AB58C15009E1716 /* CustomTextField.swift */; };
+		11CFABEC2AB5960A009E1716 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CFABEB2AB5960A009E1716 /* CustomTextFieldView.swift */; };
+		11CFABEF2AB596B4009E1716 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CFABEE2AB596B4009E1716 /* AppConstants.swift */; };
+		11CFABF12AB59DA9009E1716 /* UITextField+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CFABF02AB59DA9009E1716 /* UITextField+extension.swift */; };
+		11CFABF32AB5A47B009E1716 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CFABF22AB5A47B009E1716 /* String+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +65,12 @@
 		113BBD782AB0C24D00654BF8 /* ProfileFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFactory.swift; sourceTree = "<group>"; };
 		113BBD7A2AB0C24D00654BF8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		113BBD7D2AB0C24D00654BF8 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		116B773A2AB2BCC0004A833D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		11CFABE92AB58C15009E1716 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		11CFABEB2AB5960A009E1716 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		11CFABEE2AB596B4009E1716 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		11CFABF02AB59DA9009E1716 /* UITextField+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+extension.swift"; sourceTree = "<group>"; };
+		11CFABF22AB5A47B009E1716 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		1FBDB5721120CB6C6F01310F /* Pods_abit_itmo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_abit_itmo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B72D91019E1A5BE32AC4C0 /* Pods-abit.itmo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abit.itmo.debug.xcconfig"; path = "Target Support Files/Pods-abit.itmo/Pods-abit.itmo.debug.xcconfig"; sourceTree = "<group>"; };
 		F5B3B30E5726784B827FFDD2 /* Pods-abit.itmo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abit.itmo.release.xcconfig"; path = "Target Support Files/Pods-abit.itmo/Pods-abit.itmo.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +132,7 @@
 				113BBCF42AB03BAA00654BF8 /* LaunchScreen.storyboard */,
 				113BBCF72AB03BAA00654BF8 /* Info.plist */,
 				113BBCF22AB03BAA00654BF8 /* Assets.xcassets */,
+				116B773A2AB2BCC0004A833D /* Colors.swift */,
 			);
 			path = "Supporting+files";
 			sourceTree = "<group>";
@@ -127,6 +140,9 @@
 		113BBCFE2AB03EBF00654BF8 /* AppLayer */ = {
 			isa = PBXGroup;
 			children = (
+				113BBD4A2AB053D300654BF8 /* Extension */,
+				11CFABED2AB59695009E1716 /* Helpers */,
+				11CFABE82AB58C01009E1716 /* View */,
 				113BBD052AB0402300654BF8 /* Module */,
 			);
 			path = AppLayer;
@@ -148,7 +164,6 @@
 				113BBD612AB0C11F00654BF8 /* Dashboard */,
 				113BBD602AB0C11300654BF8 /* List */,
 				113BBD5F2AB0C0BB00654BF8 /* Profile */,
-				113BBD4A2AB053D300654BF8 /* Extension */,
 				113BBD472AB053A200654BF8 /* NavigationController */,
 				113BBD5A2AB0BEC300654BF8 /* TabBarController */,
 			);
@@ -168,6 +183,8 @@
 			children = (
 				113BBD4B2AB053E800654BF8 /* CALayer+extension.swift */,
 				113BBD4D2AB0543F00654BF8 /* UIWindow+extensions.swift */,
+				11CFABF02AB59DA9009E1716 /* UITextField+extension.swift */,
+				11CFABF22AB5A47B009E1716 /* String+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -349,6 +366,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		11CFABE82AB58C01009E1716 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11CFABE92AB58C15009E1716 /* CustomTextField.swift */,
+				11CFABEB2AB5960A009E1716 /* CustomTextFieldView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11CFABED2AB59695009E1716 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				11CFABEE2AB596B4009E1716 /* AppConstants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		608AA0B7FD648475D9893630 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,21 +507,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				113BBD592AB0567100654BF8 /* AuthViewModel.swift in Sources */,
+				11CFABF12AB59DA9009E1716 /* UITextField+extension.swift in Sources */,
+				116B773B2AB2BCC0004A833D /* Colors.swift in Sources */,
 				113BBCEA2AB03BA500654BF8 /* AppDelegate.swift in Sources */,
 				113BBD442AB0536A00654BF8 /* AppInitializer.swift in Sources */,
+				11CFABEA2AB58C15009E1716 /* CustomTextField.swift in Sources */,
 				113BBD492AB053BD00654BF8 /* NavigationController.swift in Sources */,
 				113BBCEC2AB03BA500654BF8 /* SceneDelegate.swift in Sources */,
 				113BBD4E2AB0543F00654BF8 /* UIWindow+extensions.swift in Sources */,
 				113BBD742AB0C24500654BF8 /* ListFactory.swift in Sources */,
 				113BBD752AB0C24500654BF8 /* ListViewModel.swift in Sources */,
 				113BBD462AB0537F00654BF8 /* GlobalRouter.swift in Sources */,
+				11CFABEC2AB5960A009E1716 /* CustomTextFieldView.swift in Sources */,
 				113BBD6C2AB0C23A00654BF8 /* DashboardViewController.swift in Sources */,
 				113BBD5C2AB0BF1600654BF8 /* TabBarObject.swift in Sources */,
 				113BBD552AB0552300654BF8 /* AuthFactory.swift in Sources */,
 				113BBD7F2AB0C24D00654BF8 /* ProfileViewController.swift in Sources */,
+				11CFABF32AB5A47B009E1716 /* String+extension.swift in Sources */,
 				113BBD5E2AB0BFE500654BF8 /* TabBarController.swift in Sources */,
 				113BBD6B2AB0C23A00654BF8 /* DashboardViewModel.swift in Sources */,
 				113BBD7E2AB0C24D00654BF8 /* ProfileFactory.swift in Sources */,
+				11CFABEF2AB596B4009E1716 /* AppConstants.swift in Sources */,
 				113BBD572AB0555900654BF8 /* AuthViewController.swift in Sources */,
 				113BBD802AB0C24D00654BF8 /* ProfileViewModel.swift in Sources */,
 				113BBD6A2AB0C23A00654BF8 /* DashboardFactory.swift in Sources */,

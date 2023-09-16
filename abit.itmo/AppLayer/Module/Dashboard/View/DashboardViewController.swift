@@ -31,8 +31,8 @@ final class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        view.backgroundColor = .white
+//        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }
 

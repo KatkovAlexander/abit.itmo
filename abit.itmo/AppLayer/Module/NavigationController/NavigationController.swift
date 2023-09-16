@@ -32,8 +32,7 @@ class NavigationController: UINavigationController {
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
-        appearance.backgroundColor = .white
-        
+        appearance.backgroundColor = .white        
         appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
         navigationBar.standardAppearance = appearance
         navigationBar.compactAppearance = appearance
