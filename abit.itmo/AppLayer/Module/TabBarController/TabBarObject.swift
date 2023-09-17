@@ -45,9 +45,9 @@ struct TabBarPresentation {
     var title: String {
         switch type {
         case .dashboard:
-            return "Дашборд"
+            return "Главная"
         case .list:
-            return "Списки"
+            return "Рейтинг"
         case .profile:
             return "Профиль"
         }
@@ -56,9 +56,9 @@ struct TabBarPresentation {
     var image: UIImage? {
         switch type {
         case .dashboard:
-            return UIImage(systemName: "menucard")
+            return UIImage(systemName: "house")
         case .list:
-            return UIImage(systemName: "message")
+            return UIImage(systemName: "square.on.square")
         case .profile:
             return UIImage(systemName: "person")
         }
@@ -67,9 +67,9 @@ struct TabBarPresentation {
     var selectedImage: UIImage? {
         switch type {
         case .dashboard:
-            return UIImage(systemName: "menucard.fill")
+            return UIImage(systemName: "house.fill")
         case .list:
-            return UIImage(systemName: "message.fill")
+            return UIImage(systemName: "square.fill.on.square.fill")
         case .profile:
             return UIImage(systemName: "person.fill")
         }

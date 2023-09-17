@@ -37,6 +37,11 @@
 		11CFABEF2AB596B4009E1716 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CFABEE2AB596B4009E1716 /* AppConstants.swift */; };
 		11CFABF12AB59DA9009E1716 /* UITextField+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CFABF02AB59DA9009E1716 /* UITextField+extension.swift */; };
 		11CFABF32AB5A47B009E1716 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CFABF22AB5A47B009E1716 /* String+extension.swift */; };
+		11CFABF52AB753F6009E1716 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CFABF42AB753F6009E1716 /* UIColor+extension.swift */; };
+		11CFABF92AB759E9009E1716 /* DashboardTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CFABF82AB759E9009E1716 /* DashboardTableViewCellType.swift */; };
+		11CFABFC2AB75B81009E1716 /* EducationalProgrammsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CFABFB2AB75B81009E1716 /* EducationalProgrammsCell.swift */; };
+		11CFABFE2AB75B9F009E1716 /* QuestionnaireCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CFABFD2AB75B9F009E1716 /* QuestionnaireCell.swift */; };
+		11CFAC002AB76355009E1716 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CFABFF2AB76355009E1716 /* UIImage+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +76,11 @@
 		11CFABEE2AB596B4009E1716 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		11CFABF02AB59DA9009E1716 /* UITextField+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+extension.swift"; sourceTree = "<group>"; };
 		11CFABF22AB5A47B009E1716 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		11CFABF42AB753F6009E1716 /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		11CFABF82AB759E9009E1716 /* DashboardTableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCellType.swift; sourceTree = "<group>"; };
+		11CFABFB2AB75B81009E1716 /* EducationalProgrammsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationalProgrammsCell.swift; sourceTree = "<group>"; };
+		11CFABFD2AB75B9F009E1716 /* QuestionnaireCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireCell.swift; sourceTree = "<group>"; };
+		11CFABFF2AB76355009E1716 /* UIImage+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 		1FBDB5721120CB6C6F01310F /* Pods_abit_itmo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_abit_itmo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B72D91019E1A5BE32AC4C0 /* Pods-abit.itmo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abit.itmo.debug.xcconfig"; path = "Target Support Files/Pods-abit.itmo/Pods-abit.itmo.debug.xcconfig"; sourceTree = "<group>"; };
 		F5B3B30E5726784B827FFDD2 /* Pods-abit.itmo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abit.itmo.release.xcconfig"; path = "Target Support Files/Pods-abit.itmo/Pods-abit.itmo.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +195,8 @@
 				113BBD4D2AB0543F00654BF8 /* UIWindow+extensions.swift */,
 				11CFABF02AB59DA9009E1716 /* UITextField+extension.swift */,
 				11CFABF22AB5A47B009E1716 /* String+extension.swift */,
+				11CFABF42AB753F6009E1716 /* UIColor+extension.swift */,
+				11CFABFF2AB76355009E1716 /* UIImage+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -292,6 +304,7 @@
 		113BBD672AB0C23900654BF8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11CFABFA2AB75B64009E1716 /* Subviews */,
 				113BBD682AB0C23900654BF8 /* DashboardViewController.swift */,
 			);
 			path = View;
@@ -300,6 +313,7 @@
 		113BBD692AB0C23900654BF8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				11CFABF82AB759E9009E1716 /* DashboardTableViewCellType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,6 +395,15 @@
 				11CFABEE2AB596B4009E1716 /* AppConstants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		11CFABFA2AB75B64009E1716 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				11CFABFB2AB75B81009E1716 /* EducationalProgrammsCell.swift */,
+				11CFABFD2AB75B9F009E1716 /* QuestionnaireCell.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		608AA0B7FD648475D9893630 /* Pods */ = {
@@ -508,7 +531,9 @@
 			files = (
 				113BBD592AB0567100654BF8 /* AuthViewModel.swift in Sources */,
 				11CFABF12AB59DA9009E1716 /* UITextField+extension.swift in Sources */,
+				11CFABF92AB759E9009E1716 /* DashboardTableViewCellType.swift in Sources */,
 				116B773B2AB2BCC0004A833D /* Colors.swift in Sources */,
+				11CFABF52AB753F6009E1716 /* UIColor+extension.swift in Sources */,
 				113BBCEA2AB03BA500654BF8 /* AppDelegate.swift in Sources */,
 				113BBD442AB0536A00654BF8 /* AppInitializer.swift in Sources */,
 				11CFABEA2AB58C15009E1716 /* CustomTextField.swift in Sources */,
@@ -519,6 +544,7 @@
 				113BBD752AB0C24500654BF8 /* ListViewModel.swift in Sources */,
 				113BBD462AB0537F00654BF8 /* GlobalRouter.swift in Sources */,
 				11CFABEC2AB5960A009E1716 /* CustomTextFieldView.swift in Sources */,
+				11CFABFE2AB75B9F009E1716 /* QuestionnaireCell.swift in Sources */,
 				113BBD6C2AB0C23A00654BF8 /* DashboardViewController.swift in Sources */,
 				113BBD5C2AB0BF1600654BF8 /* TabBarObject.swift in Sources */,
 				113BBD552AB0552300654BF8 /* AuthFactory.swift in Sources */,
@@ -530,6 +556,8 @@
 				11CFABEF2AB596B4009E1716 /* AppConstants.swift in Sources */,
 				113BBD572AB0555900654BF8 /* AuthViewController.swift in Sources */,
 				113BBD802AB0C24D00654BF8 /* ProfileViewModel.swift in Sources */,
+				11CFAC002AB76355009E1716 /* UIImage+extension.swift in Sources */,
+				11CFABFC2AB75B81009E1716 /* EducationalProgrammsCell.swift in Sources */,
 				113BBD6A2AB0C23A00654BF8 /* DashboardFactory.swift in Sources */,
 				113BBD762AB0C24500654BF8 /* ListViewController.swift in Sources */,
 				113BBD4C2AB053E800654BF8 /* CALayer+extension.swift in Sources */,

@@ -28,12 +28,15 @@ class NavigationController: UINavigationController {
     }
 
     private func commonInit() {
-        applyShadow()
-        
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
-        appearance.backgroundColor = .white        
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        appearance.backgroundColor = Colors.dark.ui
+        appearance.titleTextAttributes = [
+            .foregroundColor: Colors.white.ui,
+            .font: UIFont.systemFont(
+                ofSize: 17, weight: .semibold
+            )
+        ]
         navigationBar.standardAppearance = appearance
         navigationBar.compactAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance

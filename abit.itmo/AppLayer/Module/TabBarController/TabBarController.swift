@@ -42,11 +42,10 @@ class TabBarController: UITabBarController {
                                           image: presentation.image,
                                           selectedImage: presentation.selectedImage)
             
-            self.tabBar.tintColor = .black
-            self.tabBar.backgroundColor = .darkGray
-            self.tabBar.barTintColor = .white
+            self.tabBar.tintColor = Colors.dark.ui
+            self.tabBar.backgroundColor = Colors.background.ui
             self.tabBar.isTranslucent = false
-    
+            self.tabBar.unselectedItemTintColor = Colors.mediumGray.ui
             return controller
         }
         

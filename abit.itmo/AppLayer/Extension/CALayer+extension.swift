@@ -8,11 +8,23 @@
 import UIKit
 
 extension CALayer {
-
+    
     func applyNavBarShadow() {
         shadowRadius = 8
         shadowOffset = .init(width: 0, height: 4)
         shadowColor = UIColor.black.cgColor
         shadowOpacity = 0.05
+    }
+    
+    func getImageFrom() -> UIImage? {
+        UIGraphicsBeginImageContext(frame.size)
+        
+        render(in: UIGraphicsGetCurrentContext()!)
+        
+        let outputImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return outputImage
     }
 }
