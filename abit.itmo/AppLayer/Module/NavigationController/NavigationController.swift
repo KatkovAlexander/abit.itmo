@@ -40,7 +40,7 @@ class NavigationController: UINavigationController {
         navigationBar.standardAppearance = appearance
         navigationBar.compactAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
-        navigationBar.tintColor = .black
+        navigationBar.tintColor = Colors.white.ui
         navigationBar.barTintColor = .white
         
     }

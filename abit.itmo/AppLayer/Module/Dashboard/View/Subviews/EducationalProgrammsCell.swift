@@ -8,6 +8,11 @@
 import SnapKit
 import UIKit
 
+protocol EducationalProgrammsCellDelegate: AnyObject {
+
+    func didTapSelect()
+}
+
 final class EducationalProgrammsCell: UITableViewCell {
     
     // MARK: Constants
@@ -18,6 +23,10 @@ final class EducationalProgrammsCell: UITableViewCell {
         static let selectButtonSize = CGSize(width: 134, height: 32)
     }
     
+    // MARK: Internal properties
+    
+    weak var delegate: EducationalProgrammsCellDelegate?
+
     // MARK: Private properties
         
     private lazy var containerView: UIView = {
@@ -55,6 +64,11 @@ final class EducationalProgrammsCell: UITableViewCell {
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
         button.titleLabel?.textAlignment = .left
         button.layer.cornerRadius = 10
+        button.addTarget(
+            self,
+            action: #selector(didTapSelect),
+            for: .touchUpInside
+        )
         return button
     }()
     
@@ -67,6 +81,16 @@ final class EducationalProgrammsCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: Action
+
+@objc
+private extension EducationalProgrammsCell {
+    
+    func didTapSelect() {
+        delegate?.didTapSelect()
     }
 }
 

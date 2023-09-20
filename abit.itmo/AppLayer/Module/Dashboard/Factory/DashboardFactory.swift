@@ -10,7 +10,9 @@ import UIKit
 struct DashboardFactory {
     
     func build() -> UIViewController {
-        let viewModel = DashboardViewModel()
-        return DashboardViewController(viewModel: viewModel)
+        let viewController = DashboardViewController()
+        let viewModel = DashboardViewModel(transitionHandler: viewController)
+        viewController.viewModel = viewModel
+        return viewController
     }
 }

@@ -7,6 +7,6 @@
 
 enum DashboardTableViewCellType {
     
-    case educationalProgramms(_ model: String)
-    case questionnaire(_ model: String)
+    case educationalProgramms
+    case questionnaire(_ type: QuestionnaireCellStatus)
 }
