@@ -10,7 +10,7 @@ import UIKit
 struct RatingProgramDetailFactory {
     
     func build(isPersonal: Bool) -> UIViewController {
-        let viewModel = RatingProgramDetailViewModel()
+        let viewModel = RatingProgramDetailViewModel(isPersonal: isPersonal)
         return RatingProgramDetailViewController(viewModel: viewModel)
     }
 }

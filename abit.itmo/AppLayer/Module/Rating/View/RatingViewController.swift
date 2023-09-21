@@ -62,7 +62,7 @@ extension RatingViewController: UICollectionViewDelegate {
             let model = sections[indexPath.section].items as? [RatingProgramCellModel]
         {
             viewModel.didTapMyProgram(id: model[indexPath.item].id)
-        } else if sections[indexPath.section].type == .myPrograms,
+        } else if sections[indexPath.section].type == .allPrograms,
                   let model = sections[indexPath.section].items as? [RatingProgramCellModel] {
             viewModel.didTapPublicProgram(id: model[indexPath.item].id)
         }

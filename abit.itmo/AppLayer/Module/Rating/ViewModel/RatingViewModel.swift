@@ -95,7 +95,7 @@ private extension RatingViewModel {
     func buildAllPrograms() -> [RatingSectionModel] {
         var section = [RatingSectionModel]()
         section.append(.init(
-            type: .myPrograms,
+            type: .allPrograms,
             item: RatingProgramCellModel(
                 id: "1",
                 programName: "Биоинформатика и системная биология / Bioinformatics and systems biology",

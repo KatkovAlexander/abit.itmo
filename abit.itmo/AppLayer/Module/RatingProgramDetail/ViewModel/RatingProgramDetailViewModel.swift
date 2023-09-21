@@ -12,6 +12,16 @@ final class RatingProgramDetailViewModel {
     // MARK: Internal properties
     
     @Published var tableViewModels = [RatingProgramDetailCellType]()
+    
+    // MARK: Private properties
+    
+    let enrolleePlace: Int?
+
+    // MARK: Initialization
+    
+    init(isPersonal: Bool) {
+        enrolleePlace = isPersonal ? 5 : nil
+    }
 }
 
 // MARK: Internal methods
@@ -36,7 +46,7 @@ private extension RatingProgramDetailViewModel {
         let infoModel = RatingProgramDetailInfoCellModel(
             programName: "Биоинформатика и системная биология / Bioinformatics and systems biology",
             subprogramName: "01.04.02 Прикладная математика и информатика",
-            enrolleePlace: 5,
+            enrolleePlace: enrolleePlace,
             numberOfPlaces: 18
         )
         models.append(.programInfo(infoModel))
