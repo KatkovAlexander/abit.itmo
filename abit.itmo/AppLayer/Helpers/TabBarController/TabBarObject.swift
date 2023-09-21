@@ -27,7 +27,7 @@ struct TabBarModule {
         case .dashboard:
             return DashboardFactory().build()
         case .list:
-            return ListFactory().build()
+            return RatingFactory().build()
         case .profile:
             return ProfileFactory().build()
         }

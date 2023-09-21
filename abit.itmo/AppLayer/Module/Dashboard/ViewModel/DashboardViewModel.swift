@@ -17,6 +17,8 @@ final class DashboardViewModel {
     
     private weak var transitionHandler: TransitionHandler?
     
+    // MARK: Initialization
+    
     init(transitionHandler: TransitionHandler) {
         self.transitionHandler = transitionHandler
     }

@@ -1,5 +1,5 @@
 //
-//  DashboardViewController.swift
+//  RatingProgramDetailViewController.swift
 //  abit.itmo
 //
 //  Created by Александр Катков on 12.09.2023.
@@ -9,16 +9,13 @@ import Combine
 import SnapKit
 import UIKit
 
-final class DashboardViewController: UIViewController {
+final class RatingProgramDetailViewController: UIViewController {
     
-    // MARK: Internal properties
-    
-    var viewModel: DashboardViewModel!
-
     // MARK: Private properties
-
+    
+    private let viewModel: RatingProgramDetailViewModel
     private var cancellableSet = Set<AnyCancellable>()
-    private var models = [DashboardTableViewCellType]()
+    private var models = [RatingProgramDetailCellType]()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -31,6 +28,17 @@ final class DashboardViewController: UIViewController {
         return tableView
     }()
     
+    // MARK: Initialization
+    
+    init(viewModel: RatingProgramDetailViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -38,16 +46,11 @@ final class DashboardViewController: UIViewController {
         setupUI()
         viewModel.viewDidLoad()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        configureNavigationBar()
-    }
 }
 
 // MARK: UITableViewDataSource
 
-extension DashboardViewController: UITableViewDataSource {
+extension RatingProgramDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         models.count
@@ -55,34 +58,34 @@ extension DashboardViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch models[indexPath.row] {
-            case .educationalProgramms:
+            case .programInfo(let model):
                 guard let cell = tableView.dequeueReusableCell(
-                    withIdentifier: String(describing: EducationalProgrammsCell.self),
+                    withIdentifier: String(describing: RatingProgramDetailInfoCell.self),
                     for: indexPath
-                ) as? EducationalProgrammsCell else {
+                ) as? RatingProgramDetailInfoCell else {
                     return UITableViewCell(style: .default, reuseIdentifier: nil)
                 }
-                cell.delegate = viewModel
+                cell.bind(model: model)
                 return cell
-            case .questionnaire(let status):
+            case .enrollee(let model):
                 guard let cell = tableView.dequeueReusableCell(
                     withIdentifier: String(describing: QuestionnaireCell.self),
                     for: indexPath
                 ) as? QuestionnaireCell else {
                     return UITableViewCell(style: .default, reuseIdentifier: nil)
                 }
-                cell.bind(status: status)
+//                cell.bind(status: model)
                 return cell
-        }        
+        }
     }
 }
 
 // MARK: Private extension
 
-private extension DashboardViewController {
+private extension RatingProgramDetailViewController {
     
     func setupUI() {
-        view.backgroundColor = Colors.background.ui
+        configureNavigationBar()
         configureLayout()
         bindings()
         registerCells()
@@ -106,31 +109,19 @@ private extension DashboardViewController {
                     self?.tableView.reloadData()
                 }
             }
-            .store(in: &cancellableSet) 
+            .store(in: &cancellableSet)
     }
     
     func configureNavigationBar() {
-        navigationItem.title = "ITMO.Abit"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Рейтинг"
+        navigationController?.navigationBar.prefersLargeTitles = false
 
         let appearance = UINavigationBarAppearance()
-        appearance.largeTitleTextAttributes = [
-            .font: UIFont.systemFont(
-                ofSize: 32, weight: .semibold
-            ),
-            .foregroundColor: UIColor.makeGradient(
-                colors: [Colors.skyBlue.cg, Colors.roseGold.cg],
-                size: CGSize(width: 146, height: 39)
-            )
-        ]
         appearance.titleTextAttributes = [
             .font: UIFont.systemFont(
                 ofSize: 20, weight: .semibold
             ),
-            .foregroundColor: UIColor.makeGradient(
-                colors: [Colors.skyBlue.cg, Colors.roseGold.cg],
-                size: CGSize(width: 93, height: 24)
-            )
+            .foregroundColor: Colors.white.ui
         ]
         appearance.backgroundColor = Colors.dark.ui
         navigationController?.navigationBar.compactAppearance = appearance
@@ -140,12 +131,8 @@ private extension DashboardViewController {
     
     func registerCells() {
         tableView.register(
-            EducationalProgrammsCell.self,
-            forCellReuseIdentifier: String(describing: EducationalProgrammsCell.self)
-        )
-        tableView.register(
-            QuestionnaireCell.self,
-            forCellReuseIdentifier: String(describing: QuestionnaireCell.self)
+            RatingProgramDetailInfoCell.self,
+            forCellReuseIdentifier: String(describing: RatingProgramDetailInfoCell.self)
         )
     }
 }

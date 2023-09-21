@@ -5,25 +5,12 @@
 //  Created by Александр Катков on 21.09.2023.
 //
 
-enum ProgramSectionType {
+enum ProgramSectionType: String {
     
     case segmentSection
     case descriptionSection
     case myProgrammsSection
     case allProgrammsSection
-    
-    var hash: String {
-        switch self {
-            case .segmentSection:
-                return "1"
-            case .descriptionSection:
-                return "2"
-            case .myProgrammsSection:
-                return "3"
-            case .allProgrammsSection:
-                return "4"
-        }
-    }
 }
 
 struct ProgramSectionModel: Hashable {
@@ -33,7 +20,7 @@ struct ProgramSectionModel: Hashable {
     
     init(type: ProgramSectionType) {
         self.type = type
-        self.items = [type.hash]
+        self.items = [type.rawValue]
     }
     
     init(type: ProgramSectionType, item: AnyHashable) {
@@ -47,7 +34,7 @@ struct ProgramSectionModel: Hashable {
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(type.hash)
+        hasher.combine(type.rawValue)
         hasher.combine(items)
     }
 

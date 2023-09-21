@@ -25,12 +25,21 @@
 		113BBD6A2AB0C23A00654BF8 /* DashboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD642AB0C23900654BF8 /* DashboardFactory.swift */; };
 		113BBD6B2AB0C23A00654BF8 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD662AB0C23900654BF8 /* DashboardViewModel.swift */; };
 		113BBD6C2AB0C23A00654BF8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD682AB0C23900654BF8 /* DashboardViewController.swift */; };
-		113BBD742AB0C24500654BF8 /* ListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD6F2AB0C24500654BF8 /* ListFactory.swift */; };
-		113BBD752AB0C24500654BF8 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD712AB0C24500654BF8 /* ListViewModel.swift */; };
-		113BBD762AB0C24500654BF8 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD732AB0C24500654BF8 /* ListViewController.swift */; };
+		113BBD742AB0C24500654BF8 /* RatingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD6F2AB0C24500654BF8 /* RatingFactory.swift */; };
+		113BBD752AB0C24500654BF8 /* RatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD712AB0C24500654BF8 /* RatingViewModel.swift */; };
+		113BBD762AB0C24500654BF8 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD732AB0C24500654BF8 /* RatingViewController.swift */; };
 		113BBD7E2AB0C24D00654BF8 /* ProfileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD782AB0C24D00654BF8 /* ProfileFactory.swift */; };
 		113BBD7F2AB0C24D00654BF8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD7A2AB0C24D00654BF8 /* ProfileViewController.swift */; };
 		113BBD802AB0C24D00654BF8 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113BBD7D2AB0C24D00654BF8 /* ProfileViewModel.swift */; };
+		1143D2762ABCA3D8005708CF /* RatingSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D2752ABCA3D8005708CF /* RatingSectionModel.swift */; };
+		1143D2792ABCB2EF005708CF /* RatingProgramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D2782ABCB2EF005708CF /* RatingProgramCell.swift */; };
+		1143D27B2ABCB671005708CF /* RatingProgramCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D27A2ABCB671005708CF /* RatingProgramCellModel.swift */; };
+		1143D2842ABCC28A005708CF /* RatingProgramDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D27F2ABCC28A005708CF /* RatingProgramDetailViewController.swift */; };
+		1143D2852ABCC28A005708CF /* RatingProgramDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D2812ABCC28A005708CF /* RatingProgramDetailViewModel.swift */; };
+		1143D2862ABCC28A005708CF /* RatingProgramDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D2832ABCC28A005708CF /* RatingProgramDetailFactory.swift */; };
+		1143D2882ABCC96E005708CF /* RatingProgramDetailCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D2872ABCC96E005708CF /* RatingProgramDetailCellType.swift */; };
+		1143D28B2ABCDA81005708CF /* RatingProgramDetailInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D28A2ABCDA81005708CF /* RatingProgramDetailInfoCell.swift */; };
+		1143D28D2ABCDC74005708CF /* RatingProgramDetailInfoCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D28C2ABCDC74005708CF /* RatingProgramDetailInfoCellModel.swift */; };
 		1160E6022AB82FE80037634F /* QuestionnaireCellStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160E6012AB82FE80037634F /* QuestionnaireCellStatus.swift */; };
 		1160E6062AB9FD960037634F /* ProfileTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160E6052AB9FD960037634F /* ProfileTableViewCellType.swift */; };
 		1160E6092ABA00F60037634F /* ProfileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160E6082ABA00F60037634F /* ProfileTableCell.swift */; };
@@ -83,12 +92,21 @@
 		113BBD642AB0C23900654BF8 /* DashboardFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardFactory.swift; sourceTree = "<group>"; };
 		113BBD662AB0C23900654BF8 /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		113BBD682AB0C23900654BF8 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		113BBD6F2AB0C24500654BF8 /* ListFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFactory.swift; sourceTree = "<group>"; };
-		113BBD712AB0C24500654BF8 /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
-		113BBD732AB0C24500654BF8 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		113BBD6F2AB0C24500654BF8 /* RatingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingFactory.swift; sourceTree = "<group>"; };
+		113BBD712AB0C24500654BF8 /* RatingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewModel.swift; sourceTree = "<group>"; };
+		113BBD732AB0C24500654BF8 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		113BBD782AB0C24D00654BF8 /* ProfileFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFactory.swift; sourceTree = "<group>"; };
 		113BBD7A2AB0C24D00654BF8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		113BBD7D2AB0C24D00654BF8 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		1143D2752ABCA3D8005708CF /* RatingSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingSectionModel.swift; sourceTree = "<group>"; };
+		1143D2782ABCB2EF005708CF /* RatingProgramCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProgramCell.swift; sourceTree = "<group>"; };
+		1143D27A2ABCB671005708CF /* RatingProgramCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProgramCellModel.swift; sourceTree = "<group>"; };
+		1143D27F2ABCC28A005708CF /* RatingProgramDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingProgramDetailViewController.swift; sourceTree = "<group>"; };
+		1143D2812ABCC28A005708CF /* RatingProgramDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingProgramDetailViewModel.swift; sourceTree = "<group>"; };
+		1143D2832ABCC28A005708CF /* RatingProgramDetailFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingProgramDetailFactory.swift; sourceTree = "<group>"; };
+		1143D2872ABCC96E005708CF /* RatingProgramDetailCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProgramDetailCellType.swift; sourceTree = "<group>"; };
+		1143D28A2ABCDA81005708CF /* RatingProgramDetailInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProgramDetailInfoCell.swift; sourceTree = "<group>"; };
+		1143D28C2ABCDC74005708CF /* RatingProgramDetailInfoCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProgramDetailInfoCellModel.swift; sourceTree = "<group>"; };
 		1160E6012AB82FE80037634F /* QuestionnaireCellStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireCellStatus.swift; sourceTree = "<group>"; };
 		1160E6052AB9FD960037634F /* ProfileTableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCellType.swift; sourceTree = "<group>"; };
 		1160E6082ABA00F60037634F /* ProfileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableCell.swift; sourceTree = "<group>"; };
@@ -209,13 +227,12 @@
 		113BBD052AB0402300654BF8 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				1160E60C2ABA0A7E0037634F /* Program */,
 				113BBD4F2AB0545800654BF8 /* Auth */,
 				113BBD612AB0C11F00654BF8 /* Dashboard */,
-				113BBD602AB0C11300654BF8 /* List */,
+				1160E60C2ABA0A7E0037634F /* Program */,
+				113BBD602AB0C11300654BF8 /* Rating */,
+				1143D27C2ABCC26A005708CF /* RatingProgramDetail */,
 				113BBD5F2AB0C0BB00654BF8 /* Profile */,
-				113BBD472AB053A200654BF8 /* NavigationController */,
-				113BBD5A2AB0BEC300654BF8 /* TabBarController */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -304,7 +321,7 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		113BBD602AB0C11300654BF8 /* List */ = {
+		113BBD602AB0C11300654BF8 /* Rating */ = {
 			isa = PBXGroup;
 			children = (
 				113BBD6E2AB0C24500654BF8 /* Factory */,
@@ -312,7 +329,7 @@
 				113BBD722AB0C24500654BF8 /* View */,
 				113BBD702AB0C24500654BF8 /* ViewModel */,
 			);
-			path = List;
+			path = Rating;
 			sourceTree = "<group>";
 		};
 		113BBD612AB0C11F00654BF8 /* Dashboard */ = {
@@ -362,6 +379,8 @@
 		113BBD6D2AB0C24500654BF8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1143D2752ABCA3D8005708CF /* RatingSectionModel.swift */,
+				1143D27A2ABCB671005708CF /* RatingProgramCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -369,7 +388,7 @@
 		113BBD6E2AB0C24500654BF8 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				113BBD6F2AB0C24500654BF8 /* ListFactory.swift */,
+				113BBD6F2AB0C24500654BF8 /* RatingFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -377,7 +396,7 @@
 		113BBD702AB0C24500654BF8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				113BBD712AB0C24500654BF8 /* ListViewModel.swift */,
+				113BBD712AB0C24500654BF8 /* RatingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -385,7 +404,8 @@
 		113BBD722AB0C24500654BF8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				113BBD732AB0C24500654BF8 /* ListViewController.swift */,
+				1143D2772ABCB2CE005708CF /* Subviews */,
+				113BBD732AB0C24500654BF8 /* RatingViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -421,6 +441,67 @@
 				113BBD7D2AB0C24D00654BF8 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1143D2772ABCB2CE005708CF /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				1143D2782ABCB2EF005708CF /* RatingProgramCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		1143D27C2ABCC26A005708CF /* RatingProgramDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1143D2822ABCC28A005708CF /* Factory */,
+				1143D27D2ABCC289005708CF /* Model */,
+				1143D27E2ABCC28A005708CF /* View */,
+				1143D2802ABCC28A005708CF /* ViewModel */,
+			);
+			path = RatingProgramDetail;
+			sourceTree = "<group>";
+		};
+		1143D27D2ABCC289005708CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1143D2872ABCC96E005708CF /* RatingProgramDetailCellType.swift */,
+				1143D28C2ABCDC74005708CF /* RatingProgramDetailInfoCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1143D27E2ABCC28A005708CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1143D2892ABCDA51005708CF /* Subviews */,
+				1143D27F2ABCC28A005708CF /* RatingProgramDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1143D2802ABCC28A005708CF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1143D2812ABCC28A005708CF /* RatingProgramDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1143D2822ABCC28A005708CF /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				1143D2832ABCC28A005708CF /* RatingProgramDetailFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		1143D2892ABCDA51005708CF /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				1143D28A2ABCDA81005708CF /* RatingProgramDetailInfoCell.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		1160E6032AB9FCA10037634F /* TableCell */ = {
@@ -529,6 +610,8 @@
 		11CFABED2AB59695009E1716 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				113BBD472AB053A200654BF8 /* NavigationController */,
+				113BBD5A2AB0BEC300654BF8 /* TabBarController */,
 				11CFABEE2AB596B4009E1716 /* AppConstants.swift */,
 				11C2003A2ABB623D00B7A0C9 /* SectionLayoutable.swift */,
 			);
@@ -680,14 +763,18 @@
 				11CFABEA2AB58C15009E1716 /* CustomTextField.swift in Sources */,
 				113BBD492AB053BD00654BF8 /* NavigationController.swift in Sources */,
 				1160E6142ABA0A920037634F /* ProgramFactory.swift in Sources */,
+				1143D28B2ABCDA81005708CF /* RatingProgramDetailInfoCell.swift in Sources */,
+				1143D2762ABCA3D8005708CF /* RatingSectionModel.swift in Sources */,
 				1160E6162ABA0A920037634F /* ProgramViewModel.swift in Sources */,
 				113BBCEC2AB03BA500654BF8 /* SceneDelegate.swift in Sources */,
 				113BBD4E2AB0543F00654BF8 /* UIWindow+extensions.swift in Sources */,
-				113BBD742AB0C24500654BF8 /* ListFactory.swift in Sources */,
-				113BBD752AB0C24500654BF8 /* ListViewModel.swift in Sources */,
+				113BBD742AB0C24500654BF8 /* RatingFactory.swift in Sources */,
+				113BBD752AB0C24500654BF8 /* RatingViewModel.swift in Sources */,
 				113BBD462AB0537F00654BF8 /* GlobalRouter.swift in Sources */,
 				1160E6152ABA0A920037634F /* ProgramViewController.swift in Sources */,
+				1143D2842ABCC28A005708CF /* RatingProgramDetailViewController.swift in Sources */,
 				1160E6092ABA00F60037634F /* ProfileTableCell.swift in Sources */,
+				1143D27B2ABCB671005708CF /* RatingProgramCellModel.swift in Sources */,
 				11CFABEC2AB5960A009E1716 /* CustomTextFieldView.swift in Sources */,
 				11CFABFE2AB75B9F009E1716 /* QuestionnaireCell.swift in Sources */,
 				11C200442ABB727800B7A0C9 /* MyProgramCell.swift in Sources */,
@@ -696,8 +783,10 @@
 				113BBD552AB0552300654BF8 /* AuthFactory.swift in Sources */,
 				113BBD7F2AB0C24D00654BF8 /* ProfileViewController.swift in Sources */,
 				11CFABF32AB5A47B009E1716 /* String+extension.swift in Sources */,
+				1143D2862ABCC28A005708CF /* RatingProgramDetailFactory.swift in Sources */,
 				113BBD5E2AB0BFE500654BF8 /* TabBarController.swift in Sources */,
 				113BBD6B2AB0C23A00654BF8 /* DashboardViewModel.swift in Sources */,
+				1143D2792ABCB2EF005708CF /* RatingProgramCell.swift in Sources */,
 				11C200422ABB6CB500B7A0C9 /* DescriptionCell.swift in Sources */,
 				113BBD7E2AB0C24D00654BF8 /* ProfileFactory.swift in Sources */,
 				11C200402ABB632400B7A0C9 /* ProgramSectionModel.swift in Sources */,
@@ -714,8 +803,11 @@
 				11C200462ABB76DA00B7A0C9 /* MyProgrammCellModel.swift in Sources */,
 				11C200392ABB613200B7A0C9 /* SegmentCellModelModel.swift in Sources */,
 				113BBD6A2AB0C23A00654BF8 /* DashboardFactory.swift in Sources */,
-				113BBD762AB0C24500654BF8 /* ListViewController.swift in Sources */,
+				1143D28D2ABCDC74005708CF /* RatingProgramDetailInfoCellModel.swift in Sources */,
+				1143D2852ABCC28A005708CF /* RatingProgramDetailViewModel.swift in Sources */,
+				113BBD762AB0C24500654BF8 /* RatingViewController.swift in Sources */,
 				113BBD4C2AB053E800654BF8 /* CALayer+extension.swift in Sources */,
+				1143D2882ABCC96E005708CF /* RatingProgramDetailCellType.swift in Sources */,
 				1160E6022AB82FE80037634F /* QuestionnaireCellStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

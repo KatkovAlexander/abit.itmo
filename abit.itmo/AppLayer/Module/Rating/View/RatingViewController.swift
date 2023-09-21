@@ -1,5 +1,5 @@
 //
-//  ProgramViewController.swift
+//  RatingViewController.swift
 //  abit.itmo
 //
 //  Created by Александр Катков on 12.09.2023.
@@ -9,13 +9,16 @@ import Combine
 import SnapKit
 import UIKit
 
-final class ProgramViewController: UIViewController {
+final class RatingViewController: UIViewController {
+    
+    // MARK: Internal properties
+
+    var viewModel: RatingViewModel!
     
     // MARK: Private properties
     
-    private var sections = [ProgramSectionModel]()
-    private var dataSource: UICollectionViewDiffableDataSource<ProgramSectionModel, AnyHashable>?
-    private let viewModel: ProgramViewModel
+    private var sections = [RatingSectionModel]()
+    private var dataSource: UICollectionViewDiffableDataSource<RatingSectionModel, AnyHashable>?
     private var cancellableSet = Set<AnyCancellable>()
     
     private lazy var collectionView: UICollectionView = {
@@ -23,23 +26,13 @@ final class ProgramViewController: UIViewController {
             frame: .zero,
             collectionViewLayout: generateLayout()
         )
+        collectionView.delegate = self
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.keyboardDismissMode = .onDrag
         collectionView.backgroundColor = Colors.background.ui
         return collectionView
     }()
-    
-    // MARK: Initialization
-    
-    init(viewModel: ProgramViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     // MARK: Lifecycle
     
@@ -53,9 +46,32 @@ final class ProgramViewController: UIViewController {
         super.viewWillAppear(animated)
         configureNavigationBar()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
 }
 
-private extension ProgramViewController {
+// MARK: UICollectionViewDelegate
+
+extension RatingViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if sections[indexPath.section].type == .myPrograms,
+            let model = sections[indexPath.section].items as? [RatingProgramCellModel]
+        {
+            viewModel.didTapMyProgram(id: model[indexPath.item].id)
+        } else if sections[indexPath.section].type == .myPrograms,
+                  let model = sections[indexPath.section].items as? [RatingProgramCellModel] {
+            viewModel.didTapPublicProgram(id: model[indexPath.item].id)
+        }
+    }
+}
+
+// MARK: Private methods
+
+private extension RatingViewController {
     
     func setupUI() {
         view.backgroundColor = Colors.background.ui
@@ -76,15 +92,27 @@ private extension ProgramViewController {
     }
     
     func configureNavigationBar() {
-        navigationItem.title = "Программы"
-        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.title = "Рейтинги"
+        navigationController?.navigationBar.prefersLargeTitles = true
 
         let appearance = UINavigationBarAppearance()
+        appearance.largeTitleTextAttributes = [
+            .font: UIFont.systemFont(
+                ofSize: 32, weight: .semibold
+            ),
+            .foregroundColor: UIColor.makeGradient(
+                colors: [Colors.skyBlue.cg, Colors.roseGold.cg],
+                size: CGSize(width: 146, height: 39)
+            )
+        ]
         appearance.titleTextAttributes = [
             .font: UIFont.systemFont(
                 ofSize: 20, weight: .semibold
             ),
-            .foregroundColor: Colors.white.ui
+            .foregroundColor: UIColor.makeGradient(
+                colors: [Colors.skyBlue.cg, Colors.roseGold.cg],
+                size: CGSize(width: 93, height: 24)
+            )
         ]
         appearance.backgroundColor = Colors.dark.ui
         navigationController?.navigationBar.compactAppearance = appearance
@@ -104,16 +132,8 @@ private extension ProgramViewController {
             forCellWithReuseIdentifier: String(describing: SegmentCell.self)
         )
         collectionView.register(
-            DescriptionCell.self,
-            forCellWithReuseIdentifier: String(describing: DescriptionCell.self)
-        )
-        collectionView.register(
-            MyProgramCell.self,
-            forCellWithReuseIdentifier: String(describing: MyProgramCell.self)
-        )
-        collectionView.register(
-            AllProgramCell.self,
-            forCellWithReuseIdentifier: String(describing: AllProgramCell.self)
+            RatingProgramCell.self,
+            forCellWithReuseIdentifier: String(describing: RatingProgramCell.self)
         )
     }
     
@@ -122,7 +142,7 @@ private extension ProgramViewController {
             .sink { [weak self] collectionSections in
                 self?.sections = collectionSections
                 
-                var snapshot = NSDiffableDataSourceSnapshot<ProgramSectionModel, AnyHashable>()
+                var snapshot = NSDiffableDataSourceSnapshot<RatingSectionModel, AnyHashable>()
                 snapshot.appendSections(collectionSections)
                 
                 for section in collectionSections {
@@ -135,18 +155,14 @@ private extension ProgramViewController {
     }
     
     func createDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<ProgramSectionModel, AnyHashable>(
+        dataSource = UICollectionViewDiffableDataSource<RatingSectionModel, AnyHashable>(
             collectionView: collectionView,
             cellProvider: { (_, indexPath, data) -> UICollectionViewCell? in
                 switch self.sections[indexPath.section].type {
                     case .segmentSection:
                         return self.configureSegmentCell(indexPath, data)
-                    case .descriptionSection:
-                        return self.configureDescriptionCell(indexPath)
-                    case .myProgrammsSection:
-                        return self.configureMyProgramCell(indexPath, data)
-                    case .allProgrammsSection:
-                        return self.configureAllProgramCell(indexPath, data)
+                    case .myPrograms, .allPrograms:
+                        return self.configureProgramCell(indexPath, data)
                 }
             }
         )
@@ -169,50 +185,20 @@ private extension ProgramViewController {
         return cell
     }
     
-    func configureDescriptionCell(
-        _ indexPath: IndexPath
-    ) -> UICollectionViewCell? {
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: String(describing: DescriptionCell.self),
-            for: indexPath
-        ) as? DescriptionCell
-        else {
-            return UICollectionViewCell()
-        }
-        return cell
-    }
-    
-    func configureMyProgramCell(
+    func configureProgramCell(
         _ indexPath: IndexPath,
         _ data: AnyHashable
     ) -> UICollectionViewCell? {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: String(describing: MyProgramCell.self),
+            withReuseIdentifier: String(describing: RatingProgramCell.self),
             for: indexPath
-        ) as? MyProgramCell,
-              let data = data as? MyProgramCellModel
-        else {
-            return UICollectionViewCell()
-        }
-        cell.bind(index: indexPath.row + 1, model: data)
-//        cell.delegate = viewModel
-        return cell
-    }
-    
-    func configureAllProgramCell(
-        _ indexPath: IndexPath,
-        _ data: AnyHashable
-    ) -> UICollectionViewCell? {
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: String(describing: AllProgramCell.self),
-            for: indexPath
-        ) as? AllProgramCell,
-              let data = data as? AllProgramCellModel
+        ) as? RatingProgramCell,
+              let data = data as? RatingProgramCellModel
         else {
             return UICollectionViewCell()
         }
         cell.bind(model: data)
-//        cell.delegate = viewModel
         return cell
     }
 }
+
