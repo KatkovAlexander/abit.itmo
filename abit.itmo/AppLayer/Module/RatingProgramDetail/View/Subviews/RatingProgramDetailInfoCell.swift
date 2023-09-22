@@ -135,4 +135,3 @@ private extension RatingProgramDetailInfoCell {
         return attrText
     }
 }
-

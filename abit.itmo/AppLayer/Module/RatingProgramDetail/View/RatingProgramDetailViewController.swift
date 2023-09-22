@@ -69,12 +69,13 @@ extension RatingProgramDetailViewController: UITableViewDataSource {
                 return cell
             case .enrollee(let model):
                 guard let cell = tableView.dequeueReusableCell(
-                    withIdentifier: String(describing: QuestionnaireCell.self),
+                    withIdentifier: String(describing: RatingProgramEnrolleeCell.self),
                     for: indexPath
-                ) as? QuestionnaireCell else {
+                ) as? RatingProgramEnrolleeCell else {
                     return UITableViewCell(style: .default, reuseIdentifier: nil)
                 }
-//                cell.bind(status: model)
+                cell.bind(model: model)
+                cell.delegate = viewModel
                 return cell
         }
     }
@@ -133,6 +134,10 @@ private extension RatingProgramDetailViewController {
         tableView.register(
             RatingProgramDetailInfoCell.self,
             forCellReuseIdentifier: String(describing: RatingProgramDetailInfoCell.self)
+        )
+        tableView.register(
+            RatingProgramEnrolleeCell.self,
+            forCellReuseIdentifier: String(describing: RatingProgramEnrolleeCell.self)
         )
     }
 }

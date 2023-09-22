@@ -24,6 +24,10 @@ enum Colors: String {
     case green
     case gold
     case subtitle
+    case cardGray
+    case yellow
+    case cianBlue
+    case cianGreen
     
     var ui: UIColor {
         UIColor(named: rawValue) ?? .blue

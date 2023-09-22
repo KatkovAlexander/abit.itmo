@@ -83,7 +83,7 @@ private extension RatingViewModel {
             type: .myPrograms,
             item: RatingProgramCellModel(
                 id: "1",
-                position: 2,
+                position: 3,
                 programName: "Биоинформатика и системная биология / Bioinformatics and systems biology",
                 subprogramName: "01.04.02 Прикладная математика и информатика",
                 kcp: 25

@@ -40,6 +40,9 @@
 		1143D2882ABCC96E005708CF /* RatingProgramDetailCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D2872ABCC96E005708CF /* RatingProgramDetailCellType.swift */; };
 		1143D28B2ABCDA81005708CF /* RatingProgramDetailInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D28A2ABCDA81005708CF /* RatingProgramDetailInfoCell.swift */; };
 		1143D28D2ABCDC74005708CF /* RatingProgramDetailInfoCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D28C2ABCDC74005708CF /* RatingProgramDetailInfoCellModel.swift */; };
+		1143D28F2ABE11E4005708CF /* RatingProgramEnrolleeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D28E2ABE11E4005708CF /* RatingProgramEnrolleeCell.swift */; };
+		1143D2912ABE12D9005708CF /* RatingProgramEnrolleeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D2902ABE12D9005708CF /* RatingProgramEnrolleeCellModel.swift */; };
+		1143D2932ABE19D6005708CF /* Double+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D2922ABE19D6005708CF /* Double+extension.swift */; };
 		1160E6022AB82FE80037634F /* QuestionnaireCellStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160E6012AB82FE80037634F /* QuestionnaireCellStatus.swift */; };
 		1160E6062AB9FD960037634F /* ProfileTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160E6052AB9FD960037634F /* ProfileTableViewCellType.swift */; };
 		1160E6092ABA00F60037634F /* ProfileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160E6082ABA00F60037634F /* ProfileTableCell.swift */; };
@@ -107,6 +110,9 @@
 		1143D2872ABCC96E005708CF /* RatingProgramDetailCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProgramDetailCellType.swift; sourceTree = "<group>"; };
 		1143D28A2ABCDA81005708CF /* RatingProgramDetailInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProgramDetailInfoCell.swift; sourceTree = "<group>"; };
 		1143D28C2ABCDC74005708CF /* RatingProgramDetailInfoCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProgramDetailInfoCellModel.swift; sourceTree = "<group>"; };
+		1143D28E2ABE11E4005708CF /* RatingProgramEnrolleeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProgramEnrolleeCell.swift; sourceTree = "<group>"; };
+		1143D2902ABE12D9005708CF /* RatingProgramEnrolleeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProgramEnrolleeCellModel.swift; sourceTree = "<group>"; };
+		1143D2922ABE19D6005708CF /* Double+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extension.swift"; sourceTree = "<group>"; };
 		1160E6012AB82FE80037634F /* QuestionnaireCellStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireCellStatus.swift; sourceTree = "<group>"; };
 		1160E6052AB9FD960037634F /* ProfileTableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCellType.swift; sourceTree = "<group>"; };
 		1160E6082ABA00F60037634F /* ProfileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableCell.swift; sourceTree = "<group>"; };
@@ -255,6 +261,7 @@
 				11CFABF42AB753F6009E1716 /* UIColor+extension.swift */,
 				11CFABFF2AB76355009E1716 /* UIImage+extension.swift */,
 				1160E6172ABA0B7D0037634F /* UIViewController+transitionHandler.swift */,
+				1143D2922ABE19D6005708CF /* Double+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -467,6 +474,7 @@
 			children = (
 				1143D2872ABCC96E005708CF /* RatingProgramDetailCellType.swift */,
 				1143D28C2ABCDC74005708CF /* RatingProgramDetailInfoCellModel.swift */,
+				1143D2902ABE12D9005708CF /* RatingProgramEnrolleeCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -500,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				1143D28A2ABCDA81005708CF /* RatingProgramDetailInfoCell.swift */,
+				1143D28E2ABE11E4005708CF /* RatingProgramEnrolleeCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -750,6 +759,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11C200482ABB7A2700B7A0C9 /* AllProgramCell.swift in Sources */,
+				1143D2912ABE12D9005708CF /* RatingProgramEnrolleeCellModel.swift in Sources */,
 				113BBD592AB0567100654BF8 /* AuthViewModel.swift in Sources */,
 				11CFABF12AB59DA9009E1716 /* UITextField+extension.swift in Sources */,
 				11C2003E2ABB62CC00B7A0C9 /* OneItemInSectionLayout.swift in Sources */,
@@ -769,11 +779,13 @@
 				113BBCEC2AB03BA500654BF8 /* SceneDelegate.swift in Sources */,
 				113BBD4E2AB0543F00654BF8 /* UIWindow+extensions.swift in Sources */,
 				113BBD742AB0C24500654BF8 /* RatingFactory.swift in Sources */,
+				1143D28F2ABE11E4005708CF /* RatingProgramEnrolleeCell.swift in Sources */,
 				113BBD752AB0C24500654BF8 /* RatingViewModel.swift in Sources */,
 				113BBD462AB0537F00654BF8 /* GlobalRouter.swift in Sources */,
 				1160E6152ABA0A920037634F /* ProgramViewController.swift in Sources */,
 				1143D2842ABCC28A005708CF /* RatingProgramDetailViewController.swift in Sources */,
 				1160E6092ABA00F60037634F /* ProfileTableCell.swift in Sources */,
+				1143D2932ABE19D6005708CF /* Double+extension.swift in Sources */,
 				1143D27B2ABCB671005708CF /* RatingProgramCellModel.swift in Sources */,
 				11CFABEC2AB5960A009E1716 /* CustomTextFieldView.swift in Sources */,
 				11CFABFE2AB75B9F009E1716 /* QuestionnaireCell.swift in Sources */,

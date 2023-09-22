@@ -22,4 +22,18 @@ extension UIColor {
         
         return UIColor(patternImage: image)
     }
+    
+    static func makeGradient(colors: [CGColor], bounds: CGRect) -> UIColor {
+        let gradient = CAGradientLayer()
+        gradient.frame = bounds
+        gradient.colors = colors
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+        
+        guard let image = gradient.getImageFrom() else {
+            return Colors.red.ui
+        }
+        
+        return UIColor(patternImage: image)
+    }
 }

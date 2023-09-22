@@ -8,5 +8,5 @@
 enum RatingProgramDetailCellType {
     
     case programInfo(_ model: RatingProgramDetailInfoCellModel)
-    case enrollee(_ model: String)
+    case enrollee(_ model: RatingProgramEnrolleeCellModel)
 }
