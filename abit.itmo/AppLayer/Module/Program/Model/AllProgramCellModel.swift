@@ -9,7 +9,7 @@ struct AllProgramCellModel: Hashable {
     
     let id: String
     let programName: String
-    let subprograms: [SubprogramViewModel]
+    var subprograms: [SubprogramViewModel]
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)

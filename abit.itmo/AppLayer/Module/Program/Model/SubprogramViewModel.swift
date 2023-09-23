@@ -9,7 +9,7 @@ struct SubprogramViewModel: Hashable {
     
     let id: String
     let subprogramName: String
-    let isSelected: Bool
+    var isSelected: Bool
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)

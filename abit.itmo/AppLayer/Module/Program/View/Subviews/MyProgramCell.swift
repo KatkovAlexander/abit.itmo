@@ -9,8 +9,8 @@ import SnapKit
 import UIKit
 
 protocol MyProgramCellDelegate: AnyObject {
-    func didTapRemove(id: String)
-    func didTapSelect(id: String)
+    func didTapRemove(programId: String, subprogramId: String)
+    func didTapSelect(programId: String)
 }
 
 final class MyProgramCell: UICollectionViewCell {
@@ -27,7 +27,8 @@ final class MyProgramCell: UICollectionViewCell {
 
     // MARK: Private properties
     
-    private var id: String?
+    private var programId: String?
+    private var subprogramId: String?
     
     private lazy var containerView: UIView = {
         let view = UIView()
@@ -117,7 +118,8 @@ final class MyProgramCell: UICollectionViewCell {
 extension MyProgramCell {
     
     func bind(index: Int, model: MyProgramCellModel) {
-        id = model.id
+        programId = model.id
+        subprogramId = model.subprogramId
         priorityLabel.text = "Приоритет \(index)"
         programNameLabel.text = model.programName
         subprogramNameLabel.text = model.subprogramName
@@ -130,13 +132,15 @@ extension MyProgramCell {
 private extension MyProgramCell {
     
     func didTapRemove() {
-        guard let id = id else { return }
-        delegate?.didTapRemove(id: id)
+        guard let programId = programId, let subprogramId = subprogramId else {
+            return
+        }
+        delegate?.didTapRemove(programId: programId, subprogramId: subprogramId)
     }
     
     func didTapDetails() {
-        guard let id = id else { return }
-        delegate?.didTapSelect(id: id)
+        guard let programId = programId else { return }
+        delegate?.didTapSelect(programId: programId)
     }
 }
 
@@ -145,6 +149,8 @@ private extension MyProgramCell {
 private extension MyProgramCell {
     
     func setupUI() {
+        layer.cornerRadius = 20
+        contentView.layer.cornerRadius = 20
         contentView.backgroundColor = .clear
         configureLayout()
     }

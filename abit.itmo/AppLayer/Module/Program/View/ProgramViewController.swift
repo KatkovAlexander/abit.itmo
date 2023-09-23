@@ -27,7 +27,17 @@ final class ProgramViewController: UIViewController {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.keyboardDismissMode = .onDrag
         collectionView.backgroundColor = Colors.background.ui
+        collectionView.dragDelegate = self
+        collectionView.dropDelegate = self
+        collectionView.dragInteractionEnabled = true
         return collectionView
+    }()
+    
+    private lazy var emptyView: EmptyView = {
+        let view = EmptyView()
+        view.isHidden = true
+        view.delegate = viewModel
+        return view
     }()
     
     // MARK: Initialization
@@ -55,6 +65,56 @@ final class ProgramViewController: UIViewController {
     }
 }
 
+// MARK: UICollectionViewDragDelegate
+
+extension ProgramViewController: UICollectionViewDragDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        guard let item = self.sections[indexPath.section].items[indexPath.item] as? MyProgramCellModel else {
+            return []
+        }
+        
+        let itemProvider = NSItemProvider(object: item)
+        let dragObject = UIDragItem(itemProvider: itemProvider)
+        dragObject.localObject = item
+        return [dragObject]
+    }
+}
+
+// MARK: UICollectionViewDropDelegate
+
+extension ProgramViewController: UICollectionViewDropDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
+        guard let destinationIndexPath = coordinator.destinationIndexPath else {
+            return
+        }
+        
+        switch coordinator.proposal.operation {
+            case .move:
+                for item in coordinator.items {
+                    guard let sourceIndexPath = item.sourceIndexPath else {
+                        continue
+                    }
+                    coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
+                    viewModel.didMyProgramCellChangePosition(oldPositon: sourceIndexPath.item, newPosition: destinationIndexPath.item)
+                }
+            default:
+                return
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+        guard let destinationIndexPath = destinationIndexPath,
+                sections[destinationIndexPath.section].type == .myProgrammsSection
+        else { return .init(operation: .forbidden) }
+        
+        return .init(operation: .move, intent: .insertAtDestinationIndexPath)
+    }
+}
+
+// MARK: Private methods
+
 private extension ProgramViewController {
     
     func setupUI() {
@@ -67,11 +127,17 @@ private extension ProgramViewController {
     
     func configureLayout() {
         view.addSubview(collectionView)
+        view.addSubview(emptyView)
         
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.horizontalEdges.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        
+        emptyView.snp.makeConstraints { make in
+            make.centerY.equalTo(collectionView.snp.centerY)
+            make.horizontalEdges.equalToSuperview().inset(AppConstants.normalSpacing)
         }
     }
     
@@ -130,6 +196,11 @@ private extension ProgramViewController {
                 }
                 
                 self?.dataSource?.apply(snapshot, animatingDifferences: false)
+            }
+            .store(in: &cancellableSet)
+        viewModel.$showEmptyView
+            .sink { [weak self] showEmptyView in
+                self?.emptyView.isHidden = !showEmptyView
             }
             .store(in: &cancellableSet)
     }
@@ -195,7 +266,7 @@ private extension ProgramViewController {
             return UICollectionViewCell()
         }
         cell.bind(index: indexPath.row + 1, model: data)
-//        cell.delegate = viewModel
+        cell.delegate = viewModel
         return cell
     }
     
@@ -212,7 +283,7 @@ private extension ProgramViewController {
             return UICollectionViewCell()
         }
         cell.bind(model: data)
-//        cell.delegate = viewModel
+        cell.delegate = viewModel
         return cell
     }
 }

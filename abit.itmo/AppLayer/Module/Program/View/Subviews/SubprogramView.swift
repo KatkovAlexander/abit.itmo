@@ -9,7 +9,7 @@ import SnapKit
 import UIKit
 
 protocol SubprogramViewDelegate: AnyObject {
-    func didSelectSubprogram(id: String)
+    func didSelectSubprogram(subprogramId: String)
 }
 
 final class SubprogramView: UIView {
@@ -35,7 +35,6 @@ final class SubprogramView: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "checkbox")
-        imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         return imageView
     }()
     
@@ -84,7 +83,7 @@ private extension SubprogramView {
     func didTap() {
         guard let id = id else { return }
         
-        delegate?.didSelectSubprogram(id: id)
+        delegate?.didSelectSubprogram(subprogramId: id)
     }
 }
 
@@ -115,7 +114,7 @@ private extension SubprogramView {
         checkboxImageView.snp.makeConstraints { make in
             make.centerY.equalTo(subprogramNameLabel.snp.centerY)
             make.leading.equalTo(subprogramNameLabel.snp.trailing)
-                .offset(AppConstants.normalSpacing)
+                .inset(-AppConstants.bigSpacing)
             make.size.equalTo(20)
         }
         

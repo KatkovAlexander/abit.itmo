@@ -43,6 +43,7 @@
 		1143D28F2ABE11E4005708CF /* RatingProgramEnrolleeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D28E2ABE11E4005708CF /* RatingProgramEnrolleeCell.swift */; };
 		1143D2912ABE12D9005708CF /* RatingProgramEnrolleeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D2902ABE12D9005708CF /* RatingProgramEnrolleeCellModel.swift */; };
 		1143D2932ABE19D6005708CF /* Double+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D2922ABE19D6005708CF /* Double+extension.swift */; };
+		1143D2972ABF985C005708CF /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143D2962ABF985C005708CF /* EmptyView.swift */; };
 		1160E6022AB82FE80037634F /* QuestionnaireCellStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160E6012AB82FE80037634F /* QuestionnaireCellStatus.swift */; };
 		1160E6062AB9FD960037634F /* ProfileTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160E6052AB9FD960037634F /* ProfileTableViewCellType.swift */; };
 		1160E6092ABA00F60037634F /* ProfileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160E6082ABA00F60037634F /* ProfileTableCell.swift */; };
@@ -113,6 +114,7 @@
 		1143D28E2ABE11E4005708CF /* RatingProgramEnrolleeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProgramEnrolleeCell.swift; sourceTree = "<group>"; };
 		1143D2902ABE12D9005708CF /* RatingProgramEnrolleeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProgramEnrolleeCellModel.swift; sourceTree = "<group>"; };
 		1143D2922ABE19D6005708CF /* Double+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extension.swift"; sourceTree = "<group>"; };
+		1143D2962ABF985C005708CF /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		1160E6012AB82FE80037634F /* QuestionnaireCellStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireCellStatus.swift; sourceTree = "<group>"; };
 		1160E6052AB9FD960037634F /* ProfileTableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCellType.swift; sourceTree = "<group>"; };
 		1160E6082ABA00F60037634F /* ProfileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableCell.swift; sourceTree = "<group>"; };
@@ -612,6 +614,7 @@
 				1160E6032AB9FCA10037634F /* TableCell */,
 				11CFABE92AB58C15009E1716 /* CustomTextField.swift */,
 				11CFABEB2AB5960A009E1716 /* CustomTextFieldView.swift */,
+				1143D2962ABF985C005708CF /* EmptyView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -778,6 +781,7 @@
 				1160E6162ABA0A920037634F /* ProgramViewModel.swift in Sources */,
 				113BBCEC2AB03BA500654BF8 /* SceneDelegate.swift in Sources */,
 				113BBD4E2AB0543F00654BF8 /* UIWindow+extensions.swift in Sources */,
+				1143D2972ABF985C005708CF /* EmptyView.swift in Sources */,
 				113BBD742AB0C24500654BF8 /* RatingFactory.swift in Sources */,
 				1143D28F2ABE11E4005708CF /* RatingProgramEnrolleeCell.swift in Sources */,
 				113BBD752AB0C24500654BF8 /* RatingViewModel.swift in Sources */,

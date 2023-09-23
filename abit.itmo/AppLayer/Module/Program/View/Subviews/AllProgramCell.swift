@@ -9,8 +9,8 @@ import SnapKit
 import UIKit
 
 protocol AllProgramCellDelegate: AnyObject {
-    func didSelectSubprogram(id: String)
-    func didTapSelect(id: String)
+    func didSelectSubprogram(programId: String, subprogramId: String)
+    func didTapDetail(id: String)
 }
 
 final class AllProgramCell: UICollectionViewCell {
@@ -105,8 +105,9 @@ extension AllProgramCell {
 
 extension AllProgramCell: SubprogramViewDelegate {
 
-    func didSelectSubprogram(id: String) {
-        print(id)
+    func didSelectSubprogram(subprogramId: String) {
+        guard let id = id else { return }
+        delegate?.didSelectSubprogram(programId: id, subprogramId: subprogramId)
     }
 }
 
@@ -117,7 +118,7 @@ private extension AllProgramCell {
     
     func didTapDetails() {
         guard let id = id else { return }
-        delegate?.didTapSelect(id: id)
+        delegate?.didTapDetail(id: id)
     }
 }
 
