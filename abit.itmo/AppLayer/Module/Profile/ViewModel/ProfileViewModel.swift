@@ -29,7 +29,7 @@ private extension ProfileViewModel {
     func build() {
         var models = [ProfileTableViewCellType]()
         models.append(.profile)
-        models.append(.questionnaire(.fillDocuments(1, 2)))
+        models.append(.questionnaire(.success))
         tableViewModels = models
     }
 }

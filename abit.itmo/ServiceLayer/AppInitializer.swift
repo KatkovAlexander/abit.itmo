@@ -15,7 +15,7 @@ class AppInitializer {
         let window = UIWindow(windowScene: windowScene)
         
         GlobalRouter.instance.window = window
-        GlobalRouter.instance.setMain()
+        GlobalRouter.instance.setLogin()
         
         return window
     }

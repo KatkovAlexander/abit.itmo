@@ -49,10 +49,6 @@ private extension DashboardViewModel {
     func build() {
         var models = [DashboardTableViewCellType]()
         models.append(.educationalProgramms)
-        models.append(.questionnaire(.fillDocuments(1, 2)))
-        models.append(.questionnaire(.sendDocuments))
-        models.append(.questionnaire(.onModeration))
-        models.append(.questionnaire(.fail))
         models.append(.questionnaire(.success))
         tableViewModels = models
     }
