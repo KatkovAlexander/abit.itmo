@@ -9,11 +9,11 @@ import UIKit
 
 extension CALayer {
     
-    func applyNavBarShadow() {
+    func applyShadow() {
         shadowRadius = 8
-        shadowOffset = .init(width: 0, height: 4)
+        shadowOffset = .init(width: 4, height: 4)
         shadowColor = UIColor.black.cgColor
-        shadowOpacity = 0.05
+        shadowOpacity = 0.5
     }
     
     func getImageFrom() -> UIImage? {

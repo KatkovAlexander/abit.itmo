@@ -12,13 +12,14 @@ final class RatingProgramDetailViewModel {
     // MARK: Internal properties
     
     @Published var tableViewModels = [RatingProgramDetailCellType]()
+    @Published var isHiddenShowMeButton: Bool
     
     // MARK: Private properties
     
-    let isPersonal: Bool
-    let enrolleePlace: Int?
-    let enrolleeSnils: String?
-    var openedEnrolle = [String: Bool]()
+    private let isPersonal: Bool
+    private let enrolleePlace: Int?
+    private let enrolleeSnils: String?
+    private var openedEnrollees = [String: Bool]()
     
     // MARK: Initialization
     
@@ -26,6 +27,7 @@ final class RatingProgramDetailViewModel {
         self.isPersonal = isPersonal
         enrolleePlace = isPersonal ? 3 : nil
         enrolleeSnils = isPersonal ? "№14831458653" : nil
+        isHiddenShowMeButton = !isPersonal
     }
 }
 
@@ -43,10 +45,10 @@ extension RatingProgramDetailViewModel {
 extension RatingProgramDetailViewModel: RatingProgramEnrolleeCellDelegate {
     
     func didTapEnrolleeCell(snils: String) {
-        if openedEnrolle[snils] == true {
-            openedEnrolle[snils] = false
+        if openedEnrollees[snils] == true {
+            openedEnrollees[snils] = false
         } else {
-            openedEnrolle[snils] = true
+            openedEnrollees[snils] = true
         }
         build()
     }
@@ -88,7 +90,7 @@ private extension RatingProgramDetailViewModel {
             totalScore: 102,
             examScore: 100,
             iaScores: 2,
-            isOpened: openedEnrolle["№17231458651"] ?? false,
+            isOpened: openedEnrollees["№17231458651"] ?? false,
             isCurrentUser: enrolleeSnils == "№17231458651"
         )))
         models.append(.enrollee(.init(
@@ -102,7 +104,7 @@ private extension RatingProgramDetailViewModel {
             totalScore: 98,
             examScore: 96,
             iaScores: 2,
-            isOpened: openedEnrolle["№17231458652"] ?? false,
+            isOpened: openedEnrollees["№17231458652"] ?? false,
             isCurrentUser: enrolleeSnils == "№17231458652"
         )))
         
@@ -118,8 +120,23 @@ private extension RatingProgramDetailViewModel {
                 totalScore: 96,
                 examScore: 95,
                 iaScores: 1,
-                isOpened: openedEnrolle[enrolleeSnils] ?? false,
+                isOpened: openedEnrollees[enrolleeSnils] ?? false,
                 isCurrentUser: true
+            )))
+        } else {
+            models.append(.enrollee(.init(
+                position: 3,
+                snils: "№17231458643",
+                contest: "ПИГА",
+                priority: 1,
+                diplomaAverage: 4.87,
+                isSendOriginal: false,
+                status: .inOrder,
+                totalScore: 96,
+                examScore: 95,
+                iaScores: 1,
+                isOpened: openedEnrollees["№17231458643"] ?? false,
+                isCurrentUser: enrolleeSnils == "№17231458643"
             )))
         }
         
@@ -134,11 +151,11 @@ private extension RatingProgramDetailViewModel {
             totalScore: 91,
             examScore: 90,
             iaScores: 1,
-            isOpened: openedEnrolle["№17231458653"] ?? false,
+            isOpened: openedEnrollees["№17231458653"] ?? false,
             isCurrentUser: enrolleeSnils == "№17231458653"
         )))
         models.append(.enrollee(.init(
-            position: 4,
+            position: 5,
             snils: "№17231458654",
             contest: "ВЭ",
             priority: 1,
@@ -148,8 +165,64 @@ private extension RatingProgramDetailViewModel {
             totalScore: 80.7,
             examScore: 80.7,
             iaScores: 0,
-            isOpened: openedEnrolle["№17231458654"] ?? false,
+            isOpened: openedEnrollees["№17231458654"] ?? false,
             isCurrentUser: enrolleeSnils == "№17231458654"
+        )))
+        models.append(.enrollee(.init(
+            position: 6,
+            snils: "№17231458655",
+            contest: "ВЭ",
+            priority: 1,
+            diplomaAverage: 4.3,
+            isSendOriginal: false,
+            status: nil,
+            totalScore: 79.7,
+            examScore: 79.7,
+            iaScores: 0,
+            isOpened: openedEnrollees["№17231458655"] ?? false,
+            isCurrentUser: enrolleeSnils == "№17231458655"
+        )))
+        models.append(.enrollee(.init(
+            position: 7,
+            snils: "№17231458656",
+            contest: "ВЭ",
+            priority: 1,
+            diplomaAverage: 4.2,
+            isSendOriginal: false,
+            status: nil,
+            totalScore: 78.7,
+            examScore: 78.7,
+            iaScores: 0,
+            isOpened: openedEnrollees["№17231458656"] ?? false,
+            isCurrentUser: enrolleeSnils == "№17231458656"
+        )))
+        models.append(.enrollee(.init(
+            position: 8,
+            snils: "№17231458657",
+            contest: "ВЭ",
+            priority: 1,
+            diplomaAverage: 4.1,
+            isSendOriginal: false,
+            status: nil,
+            totalScore: 77.7,
+            examScore: 77.7,
+            iaScores: 0,
+            isOpened: openedEnrollees["№17231458657"] ?? false,
+            isCurrentUser: enrolleeSnils == "№17231458657"
+        )))
+        models.append(.enrollee(.init(
+            position: 9,
+            snils: "№17231458658",
+            contest: "ВЭ",
+            priority: 1,
+            diplomaAverage: 4,
+            isSendOriginal: false,
+            status: nil,
+            totalScore: 76.7,
+            examScore: 76.7,
+            iaScores: 0,
+            isOpened: openedEnrollees["№17231458658"] ?? false,
+            isCurrentUser: enrolleeSnils == "№17231458658"
         )))
         return models
     }

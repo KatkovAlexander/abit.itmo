@@ -191,6 +191,7 @@ private extension AuthViewController {
 private extension AuthViewController {
     
     func setupUI() {
+        navigationController?.setNavigationBarHidden(true, animated: false)
         view.addGestureRecognizer(UITapGestureRecognizer(
             target: self,
             action: #selector(didTapView)

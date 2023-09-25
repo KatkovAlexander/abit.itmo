@@ -11,6 +11,12 @@ import UIKit
 
 final class RatingProgramDetailViewController: UIViewController {
     
+    // MARK: Constants
+    
+    private enum Constants {
+        static let showMeButtonSize = CGSize(width: 150, height: 40)
+    }
+    
     // MARK: Private properties
     
     private let viewModel: RatingProgramDetailViewModel
@@ -26,6 +32,27 @@ final class RatingProgramDetailViewController: UIViewController {
         tableView.keyboardDismissMode = .onDrag
         tableView.contentInset.top = AppConstants.compactSpacing
         return tableView
+    }()
+    
+    private lazy var showMeButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Показать меня", for: .normal)
+        button.backgroundColor = UIColor.makeGradient(
+            colors: [Colors.skyBlue.cg, Colors.roseGold.cg],
+            size: Constants.showMeButtonSize
+        )
+//        button.isHidden = true
+        button.setTitleColor(Colors.dark.ui, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
+        button.titleLabel?.textAlignment = .left
+        button.layer.cornerRadius = 10
+        button.addTarget(
+            self,
+            action: #selector(didTapShowMe),
+            for: .touchUpInside
+        )
+        button.layer.applyShadow()
+        return button
     }()
     
     // MARK: Initialization
@@ -81,6 +108,28 @@ extension RatingProgramDetailViewController: UITableViewDataSource {
     }
 }
 
+// MARK: Action
+
+@objc
+private extension RatingProgramDetailViewController {
+    
+    func didTapShowMe() {
+        guard let index = models.firstIndex(where: { type in
+            switch type {
+                case .programInfo:
+                    return false
+                case .enrollee(let model):
+                    return model.isCurrentUser
+            }
+        }) else { return }
+        tableView.scrollToRow(
+            at: IndexPath(row: index, section: 0),
+            at: .top,
+            animated: true
+        )
+    }
+}
+
 // MARK: Private extension
 
 private extension RatingProgramDetailViewController {
@@ -94,11 +143,19 @@ private extension RatingProgramDetailViewController {
     
     func configureLayout() {
         view.addSubview(tableView)
+        view.addSubview(showMeButton)
         
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.horizontalEdges.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        
+        showMeButton.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(AppConstants.normalSpacing)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+                .inset(50)
+            make.size.equalTo(Constants.showMeButtonSize)
         }
     }
     
@@ -109,6 +166,11 @@ private extension RatingProgramDetailViewController {
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
                 }
+            }
+            .store(in: &cancellableSet)
+        viewModel.$isHiddenShowMeButton
+            .sink { [weak self] isHiddenShowMeButton in
+                self?.showMeButton.isHidden = isHiddenShowMeButton
             }
             .store(in: &cancellableSet)
     }

@@ -45,12 +45,6 @@ class NavigationController: UINavigationController {
         
     }
     
-    private func applyShadow() {
-        navigationBar.shadowImage = UIImage()
-
-        navigationBar.layer.applyNavBarShadow()
-    }
-    
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         viewControllers.last?.navigationItem.backBarButtonItem = backButton
